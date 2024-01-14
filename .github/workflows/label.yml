@@ -1,0 +1,20 @@
+name: Label Created Workflow
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  process-label:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Print label information
+      run: |
+        echo "Label Name: ${{ github.event.label.name }}"
+        echo "Repository: ${{ github.repository }}"
+        echo "Issue Number: ${{ github.event.issue.number }}"
