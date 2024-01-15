@@ -6,10 +6,10 @@ name: Python Ml test
 on:
   push:
     branches:
-      - $default-branch
+      - main
   pull_request:
     branches:
-      - $default-branch
+      - main
 
 permissions:
   contents: read
